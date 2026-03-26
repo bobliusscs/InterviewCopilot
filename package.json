@@ -1,0 +1,44 @@
+{
+  "name": "interview-copilot",
+  "version": "0.1.0",
+  "description": "AI-powered interview copilot with audio recording, transcription, and analysis",
+  "main": "dist-electron/main/index.js",
+  "author": "User",
+  "license": "MIT",
+  "homepage": "./",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "npm run build-main && npm run build-renderer",
+    "build-main": "electron-vite build --outDir dist-electron",
+    "build-renderer": "electron-vite build --outDir dist-renderer",
+    "preview": "electron-vite preview",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.27.0",
+    "@electron-toolkit/utils": "^3.0.0",
+    "docx": "^9.6.1",
+    "electron-log": "^5.2.0",
+    "electron-store": "^8.2.0",
+    "mammoth": "^1.12.0",
+    "pdfjs-dist": "^5.5.207",
+    "pdfkit": "^0.18.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.0",
+    "vosk-browser": "^0.0.8",
+    "zustand": "^4.5.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.16.0",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.5",
+    "electron": "^31.4.0",
+    "electron-builder": "^24.13.3",
+    "electron-vite": "^2.3.0",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.10"
+  }
+}

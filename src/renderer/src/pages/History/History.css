@@ -1,0 +1,230 @@
+.history-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.records-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 20px;
+  animation: slideUp 0.5s ease;
+}
+
+.record-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px;
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+  transition: all var(--transition);
+  cursor: pointer;
+}
+
+.record-card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-lg), 0 0 30px var(--primary-glow);
+  transform: translateY(-4px);
+}
+
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.card-title-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  word-break: break-word;
+  line-height: 1.3;
+}
+
+.card-date {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.btn-delete {
+  flex-shrink: 0;
+  padding: 8px 10px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all var(--transition);
+  border-radius: var(--radius);
+}
+
+.btn-delete:hover {
+  opacity: 1;
+  background: var(--danger-glow);
+  transform: scale(1.1);
+}
+
+.components-indicator {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.component-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  background: linear-gradient(135deg, var(--primary-glow) 0%, rgba(99, 102, 241, 0.08) 100%);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary);
+  white-space: nowrap;
+  transition: all var(--transition);
+}
+
+.component-badge:hover {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.component-badge.highlight {
+  background: linear-gradient(135deg, var(--secondary-glow) 0%, rgba(16, 185, 129, 0.08) 100%);
+  border-color: rgba(16, 185, 129, 0.25);
+  color: var(--secondary-dark);
+}
+
+.component-badge.highlight:hover {
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+  color: white;
+}
+
+.card-desc {
+  margin: 0;
+  padding: 14px;
+  background: var(--bg);
+  border-radius: var(--radius);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  word-break: break-word;
+  border-left: 3px solid var(--border);
+}
+
+.btn-view {
+  padding: 12px 18px;
+  border: none;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-spring);
+  box-shadow: var(--shadow), 0 0 20px var(--primary-glow);
+  margin-top: auto;
+}
+
+.btn-view:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg), 0 0 30px var(--primary-glow);
+}
+
+.total-empty-state {
+  padding: 80px 32px;
+  text-align: center;
+  background: linear-gradient(145deg, var(--bg-card) 0%, var(--bg) 100%);
+  border-radius: var(--radius-lg);
+  border: 2px dashed var(--border);
+  animation: fadeIn 0.5s ease;
+}
+
+.empty-icon {
+  font-size: 72px;
+  margin-bottom: 24px;
+  filter: grayscale(0.4);
+  transition: filter var(--transition);
+}
+
+.total-empty-state:hover .empty-icon {
+  filter: grayscale(0);
+}
+
+.total-empty-state h3 {
+  margin: 0 0 10px 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.total-empty-state p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .records-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .record-card {
+    padding: 16px;
+    gap: 10px;
+  }
+
+  .card-title {
+    font-size: 14px;
+  }
+
+  .components-indicator {
+    gap: 6px;
+  }
+
+  .component-badge {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+
+  .btn-view {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .total-empty-state {
+    padding: 40px 16px;
+  }
+
+  .empty-icon {
+    font-size: 36px;
+    margin-bottom: 12px;
+  }
+
+  .total-empty-state h3 {
+    font-size: 16px;
+  }
+
+  .total-empty-state p {
+    font-size: 12px;
+  }
+}

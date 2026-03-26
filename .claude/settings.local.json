@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:electron-vite.org)",
+      "WebFetch(domain:www.electronjs.org)",
+      "Bash(find . -not -path */node_modules/* -not -path */dist* -not -path */.git/* -not -path */.claude/* -type f)",
+      "Bash(grep -E '\\\\.\\(ts|tsx|json|html|css|yml|md\\)$')",
+      "Bash(/tmp/final_summary.txt:*)",
+      "Bash(__NEW_LINE_e8b5976385b4dc1a__ cat:*)",
+      "Bash(npm install:*)",
+      "Bash(npm --version)",
+      "Bash(npm config:*)",
+      "Bash(/tmp/startup_guide.md:*)",
+      "Bash(__NEW_LINE_7bb3992d4caf3ea7__ cat:*)",
+      "Bash(export ELECTRON_MIRROR=https://cdn.npm.taobao.org/dist/electron/ export ELECTRON_CUSTOM_DIR=31.4.0 rm -rf node_modules package-lock.json npm install)",
+      "Bash(cat:*)",
+      "Bash(chmod +x /Users/gyl/Desktop/实操任务作答/应用能力题/1项目经历讲解/claude项目/start.sh /Users/gyl/Desktop/实操任务作答/应用能力题/1项目经历讲解/claude项目/monitor-install.sh)",
+      "Bash(__NEW_LINE_ae94d3fb0b3de655__ echo:*)",
+      "Bash(npm run:*)",
+      "Bash(__NEW_LINE_f31ba5982cd94ec9__ mkdir:*)",
+      "Bash(npm list:*)",
+      "Bash(npm remove:*)",
+      "Bash(pkill -f \"electron-vite dev\")",
+      "Bash(node -e \":*)",
+      "Bash(npm ls:*)",
+      "Bash(npx tsc:*)",
+      "Bash(curl -s http://localhost:5174)",
+      "Bash(grep -r '\\\\.type ===' src/renderer --include=*.tsx --include=*.ts)",
+      "Bash(find /Users/gyl/Desktop/实操任务作答/应用能力题/1项目经历讲解/claude项目/src -type d -not -path */.*)"
+    ]
+  }
+}
