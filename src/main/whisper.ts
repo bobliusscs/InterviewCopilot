@@ -50,7 +50,7 @@ export class WhisperTranscriber extends EventEmitter {
       console.log('[Whisper] Starting transcription:', audioFilePath)
       this.emit('progress', { percent: 10, text: '正在初始化...' })
 
-      const language = 'zh-CN' // 简体中文
+      const language = 'zh' // 简体中文
       
       // 如果是 webm 格式，先转换为 wav
       let inputFile = audioFilePath
